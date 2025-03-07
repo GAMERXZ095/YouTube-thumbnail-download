@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add SEO Meta Tags Here -->
+    <title>Free YouTube Thumbnail Downloader | HD Quality & No Watermark</title>
+    <meta
+      name="description"
+      content="Download YouTube thumbnails in 4K/HD quality instantly! Free online tool with 5 resolution options. No registration required - save thumbnails in one click."
+    />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="YOUR_GITHUB_PAGE_URL" />
+    <meta
+      property="og:title"
+      content="Free YouTube Thumbnail Downloader | HD Quality & No Watermark"
+    />
+    <meta
+      property="og:description"
+      content="Download YouTube thumbnails in 4K/HD quality instantly! Free online tool with 5 resolution options. No registration required - save thumbnails in one click."
+    />
+    <meta property="og:image" content="URL_TO_YOUR_TOOL_SCREENSHOT" />
+
+    <!-- Twitter Cards -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="YOUR_GITHUB_PAGE_URL" />
+    <meta
+      property="twitter:title"
+      content="Free YouTube Thumbnail Downloader | HD Quality & No Watermark"
+    />
+    <meta
+      property="twitter:description"
+      content="Download YouTube thumbnails in 4K/HD quality instantly! Free online tool with 5 resolution options. No registration required - save thumbnails in one click."
+    />
+    <meta property="twitter:image" content="URL_TO_YOUR_TOOL_SCREENSHOT" />
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowToTool",
+        "name": "YouTube Thumbnail Downloader",
+        "description": "Free tool to download high-quality YouTube video thumbnails in multiple resolutions",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "text": "Paste YouTube video URL"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Select desired quality"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Click download button"
+          }
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="asset/css/style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <a href="index.html" class="logo">ThumbDownloader</a>
+
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#blog">Blog</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+      <h1>YouTube Thumbnail Downloader</h1>
+
+      <input
+        type="text"
+        id="youtubeUrl"
+        placeholder="Paste YouTube video URL here..."
+      />
+
+      <button onclick="generateThumbnail()">Show Thumbnail</button>
+
+      <div id="thumbnailContainer" class="hidden">
+        <select
+          id="qualitySelect"
+          class="quality-selector"
+          onchange="updateThumbnailQuality()"
+        >
+          <option value="maxresdefault">Ultra HD</option>
+          <option value="sddefault">HD</option>
+          <option value="hqdefault">High</option>
+          <option value="mqdefault">Medium</option>
+          <option value="default">Low</option>
+        </select>
+
+        <img id="thumbnailPreview" src="" alt="Thumbnail Preview" />
+
+        <div class="download-section">
+          <button onclick="downloadThumbnail()" id="downloadBtn">
+            Download Thumbnail
+          </button>
+          <p id="selectedQuality"></p>
+        </div>
+      </div>
+      <section>
+        <!-- Add this HTML where you want the FAQ section -->
+        <div class="faq-section">
+          <h2 style="margin-bottom: 2rem; color: #2d3436; text-align: center">
+            Frequently Asked Questions
+          </h2>
+
+          <div class="faq-container">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item">
+              <button class="faq-question">
+                Is this thumbnail downloader free to use?
+                <span class="arrow"></span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes! Our YouTube thumbnail downloader is completely free with
+                  no hidden charges, watermarks, or registration required
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item">
+              <button class="faq-question">
+                How do I download YouTube thumbnails?
+                <span class="arrow"></span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Simply follow these steps:<br />
+                  1. Copy the YouTube video URL<br />
+                  2. Paste it into our downloader<br />
+                  3. Select your preferred quality<br />
+                  4. Click the download button
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item">
+              <button class="faq-question">
+                What image qualities are available?
+                <span class="arrow"></span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  We support multiple resolutions:<br />
+                  • Ultra HD (1280x720)<br />
+                  • HD (640x480)<br />
+                  • High Quality (480x360)<br />
+                  • Medium (320x180)<br />
+                  • Low (120x90)
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item">
+              <button class="faq-question">
+                Is my data safe with this tool?
+                <span class="arrow"></span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Absolutely! We don't store any user data, track personal
+                  information, or require registration. Your privacy is our
+                  priority.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="faq-item">
+              <button class="faq-question">
+                Does this work on mobile devices?
+                <span class="arrow"></span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes! Our downloader is fully responsive and works perfectly on
+                  all devices including smartphones, tablets, and desktop
+                  computers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="asset/js/script.js"></script>
+  </body>
+</html>
